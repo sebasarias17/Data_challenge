@@ -18,18 +18,12 @@ class Solution(object):
                 result.append([id2, val2])
                 j +=1
         
-        while i < len(nums1):
-            result.append(nums1[i])
-            i += 1
-
-        while j < len(nums2):
-            result.append(nums2[j])
-            j += 1
+        result.extend(nums1[i:])
+        result.extend(nums2[j:])
 
         return result
 
 def main():
-    print("Ejecutando main()...")  # Para verificar que se ejecuta
     nums1 = [[1, 2], [2, 3], [4, 5]]
     nums2 = [[2, 4], [3, 1]]
 
