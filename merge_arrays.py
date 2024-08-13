@@ -1,27 +1,22 @@
 class Solution(object):
     def mergeArrays(self, nums1, nums2):
-        i,j = 0,0
-        result = []
-        
-        while i < len(nums1) and j < len(nums2):
+        def merge_recursive(i, j):
+            if i == len(nums1):
+                return nums2[j:]
+            if j == len(nums2):
+                return nums1[i:]
+            
             id1, val1 = nums1[i]
             id2, val2 = nums2[j]
-
+            
             if id1 == id2:
-                result.append([id1, val1 + val2])
-                i +=1
-                j +=1
+                return [[id1, val1 + val2]] + merge_recursive(i + 1, j + 1)
             elif id1 < id2:
-                result.append([id1, val1])
-                i +=1
+                return [[id1, val1]] + merge_recursive(i + 1, j)
             else:
-                result.append([id2, val2])
-                j +=1
-        
-        result.extend(nums1[i:])
-        result.extend(nums2[j:])
+                return [[id2, val2]] + merge_recursive(i, j + 1)
 
-        return result
+        return merge_recursive(0, 0)
 
 def main():
     nums1 = [[1, 2], [2, 3], [4, 5]]
@@ -36,4 +31,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-        
