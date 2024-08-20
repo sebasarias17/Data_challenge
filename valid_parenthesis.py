@@ -14,13 +14,3 @@ class Solution(object):
                 else:
                     max_length = max(max_length, i - stack[-1])
         return (max_length)
-    
-def main():
-    s = "(()())" 
-    solution = Solution()
-    result = solution.longestValidParentheses(s)
-    print("Resultado:", result)
-
-
-if __name__ == "__main__":
-    main()

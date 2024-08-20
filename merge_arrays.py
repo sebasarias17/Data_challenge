@@ -21,14 +21,3 @@ class Solution(object):
         result.extend(nums2[j:])
 
         return result
-
-def main():
-    nums1 = [[1, 2], [2, 3], [4, 5]]
-    nums2 = [[2, 4], [3, 1]]
-
-    solution = Solution()
-    result = solution.mergeArrays(nums1, nums2)
-    print("INPUTS: ", "nums1: ", nums1, "," , "nums2: ", nums2 )
-    print("Resultado:", result)
-if __name__ == "__main__":
-    main()
