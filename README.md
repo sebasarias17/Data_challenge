@@ -5,6 +5,7 @@
 - [Files Included](#files-included)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
+- [To verify the codes](#to-verify-the-codes)
 - [Contact](#contact)
 
 ## Project Overview
